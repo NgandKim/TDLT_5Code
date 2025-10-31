@@ -45,4 +45,5 @@ def play_game():
             print(get_score(a, b))
 
 
-play_game()
+
+
