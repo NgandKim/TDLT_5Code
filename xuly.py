@@ -1,6 +1,6 @@
 # Hàm chuyển điểm số sang cách gọi trong tennis
 def point_to_name(point):
-    tennis_score = ["Love", "15", "30", "40"]
+    tennis_score = ["0", "15", "30", "40"]
     if point < 4:
         return tennis_score[point]
     return "Error"  # Chỉ để tránh lỗi nếu vượt quá
@@ -43,5 +43,6 @@ def play_game():
             break
         else:
             print(get_score(a, b))
+
 
 play_game()
