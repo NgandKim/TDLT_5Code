@@ -8,7 +8,10 @@ def point_to_name(point):
 # Hàm kiểm tra xem có ai thắng chưa
 def check_winner(a, b):
     if (a >= 4 or b >= 4) and abs(a - b) >= 2:
-        return "A" if a > b else "B"
+        if a>b:
+            return "A"
+        else:
+            return "B"
     return None
 
 # Hàm hiển thị điểm hiện tại
@@ -43,6 +46,7 @@ def play_game():
             break
         else:
             print(get_score(a, b))
+play_game()
 
 
 
