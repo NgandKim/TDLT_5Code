@@ -1,53 +1,55 @@
-# Hàm chuyển điểm số sang cách gọi trong tennis
-def point_to_name(point):
-    tennis_score = ["0", "15", "30", "40"]
-    if point < 4:
-        return tennis_score[point]
-    return "Error"  # Chỉ để tránh lỗi nếu vượt quá
+# Biến toàn cục lưu điểm của 2 người chơi
+player_A_score = 0
+player_B_score = 0
 
-# Hàm kiểm tra xem có ai thắng chưa
-def check_winner(a, b):
-    if (a >= 4 or b >= 4) and abs(a - b) >= 2:
-        if a>b:
-            return "A"
-        else:
-            return "B"
+# Quy tắc điểm hiển thị (0, 15, 30, 40)
+score_names = ["0", "15", "30", "40"]
+
+
+def reset_game():
+    global player_A_score, player_B_score
+    player_A_score = 0
+    player_B_score = 0
+    return "Bắt đầu game mới! Tỉ số: 0 - 0"
+
+
+def get_display_score():
+    if player_A_score >= 3 and player_B_score >= 3:
+        if player_A_score == player_B_score:
+            return "Deuce"
+        elif player_A_score == player_B_score + 1:
+            return "Advantage A"
+        elif player_B_score == player_A_score + 1:
+            return "Advantage B"
+
+    # Nếu chưa tới giai đoạn Deuce
+    score_A_display = score_names[player_A_score] if player_A_score < 4 else "40"
+    score_B_display = score_names[player_B_score] if player_B_score < 4 else "40"
+    return f"A: {score_A_display} - B: {score_B_display}"
+
+
+def check_winner():
+    if player_A_score >= 4 and player_A_score >= player_B_score + 2:
+        return "Người chơi A thắng game!"
+    elif player_B_score >= 4 and player_B_score >= player_A_score + 2:
+        return "Người chơi B thắng game!"
     return None
 
-# Hàm hiển thị điểm hiện tại
-def get_score(a, b):
-    # Trường hợp Deuce
-    if a >= 3 and b >= 3 and a == b:
-        return "Deuce"
-    # Trường hợp Advantage
-    if a >= 4 and a == b + 1:
-        return "Advantage A"
-    if b >= 4 and b == a + 1:
-        return "Advantage B"
-    # Trường hợp bình thường
-    return f"A: {point_to_name(a)} – B: {point_to_name(b)}"
 
-# Chương trình chính mô phỏng nhập điểm
-def play_game():
-    a = b = 0
-    while True:
-        player = input("Nhập A hoặc B ghi điểm: ").strip().upper()
-        if player == "A":
-            a += 1
-        elif player == "B":
-            b += 1
-        else:
-            print("Chỉ nhập A hoặc B thôi nha.")
-            continue
+def update_score(player):
+    global player_A_score, player_B_score
+    if player == "A":
+        player_A_score += 1
+    elif player == "B":
+        player_B_score += 1
 
-        winner = check_winner(a, b)
-        if winner:
-            print(f"Người chơi {winner} thắng game!")
-            break
-        else:
-            print(get_score(a, b))
-play_game()
+    # Kiểm tra có ai thắng chưa
+    winner = check_winner()
+    if winner:
+        result = winner
+        # Sau khi có người thắng, tự động reset để chơi ván mới
+        reset_game()
+        return result
 
-
-
-
+    # Nếu chưa ai thắng, trả về điểm hiển thị
+    return get_display_score()
