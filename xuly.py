@@ -3,20 +3,20 @@ player_A_score = 0
 player_B_score = 0
 
 # Quy tắc điểm hiển thị (0, 15, 30, 40)
-score_names = ["0", "15", "30", "40"]
+score_names = ["0", "15", "30", "40",None]
 
 
 def reset_game():
     global player_A_score, player_B_score
     player_A_score = 0
     player_B_score = 0
-    return "Bắt đầu game mới! Tỉ số: 0 - 0"
+    return "Start"
 
 
 def get_display_score():
     if player_A_score >= 3 and player_B_score >= 3:
         if player_A_score == 3 and player_B_score == 3:
-            return "A: 40 - B: 40\nDeuce"
+            return "Deuce"
         elif player_A_score == player_B_score + 1:
             return "Advantage A"
         elif player_B_score == player_A_score + 1:
@@ -30,9 +30,9 @@ def get_display_score():
 
 def check_winner():
     if player_A_score >= 4 and player_A_score >= player_B_score + 2:
-        return "Người chơi A thắng game!"
+        return "Player 1 wins!"
     elif player_B_score >= 4 and player_B_score >= player_A_score + 2:
-        return "Người chơi B thắng game!"
+        return "Player 2 wins!"
 
 
 def update_score(player):
@@ -42,13 +42,8 @@ def update_score(player):
     elif player == "B":
         player_B_score += 1
 
-    # Kiểm tra có ai thắng chưa
+    # Kiểm tra thắng thua
     winner = check_winner()
     if winner:
         result = winner
-        # Sau khi có người thắng, tự động reset để chơi ván mới
-        reset_game()
         return result
-
-    # Nếu chưa ai thắng, trả về điểm hiển thị
-    return get_display_score()

@@ -2,7 +2,7 @@ import sys
 from PyQt6 import QtWidgets
 from PyQt6.QtWidgets import QApplication, QWidget
 from giaodien import Ui_bangdiemtennis
-import xuly
+import xuli
 
 app = QApplication(sys.argv)
 window = QWidget(windowTitle = 'Tennis')
@@ -12,20 +12,21 @@ form.setupUi(window)
 
 
 def player_A():
-    n=xuly.update_score("A")
-
-    form.INdiem1.display(xuly.score_names[(xuly.player_A_score)])
+    n=xuli.update_score("A")
+    form.INdiem1.display(xuli.score_names[(xuli.player_A_score)])
 
 def player_B():
-    xuly.player_B_score+=1
-    form.INdiem1_2.display(xuly.score_names[(xuly.player_B_score)])
+    n=xuli.update_score("B")
+    form.INdiem1_2.display(xuli.score_names[(xuli.player_B_score)])
 
+def rule():
+    form.lneWord.setText(xuli.get_display_score)
 
 def reset():
-    xuly.reset_game()
-    form.INdiem1.display(xuly.score_names[(xuly.player_B_score)])
-    form.INdiem1_2.display(xuly.score_names[(xuly.player_B_score)])
-    form.lneWord.setText(xuly.reset_game())
+    xuli.reset_game()
+    form.INdiem1.display(xuli.score_names[(xuli.player_B_score)])
+    form.INdiem1_2.display(xuli.score_names[(xuli.player_B_score)])
+    form.lneWord.setText(xuli.reset_game())
 
 form.bt1.clicked.connect(player_A)
 form.bt2.clicked.connect(player_B)
