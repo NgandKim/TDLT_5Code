@@ -7,7 +7,7 @@ from xuly import reset_game, get_display_score, check_winner, update_score
 
 
 app = QApplication(sys.argv)
-window = QWidget(windowTitle = 'Quy doi he')
+window = QWidget(windowTitle = 'Tennis')
 form =Ui_bangdiemtennis()
 form.setupUi(window)
 
