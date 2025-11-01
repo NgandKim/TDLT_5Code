@@ -12,24 +12,25 @@ form.setupUi(window)
 
 
 def player_A():
-    xuly.player_A_score+=1
-    form.INdiem1.setText(str(xuly.score_names[(xuly.player_A_score)]))
+    n=xuly.update_score("A")
+
+    form.INdiem1.display(xuly.score_names[(xuly.player_A_score)])
 
 def player_B():
     xuly.player_B_score+=1
-    form.INdiem1.setText(str(xuly.score_names[(xuly.player_B_score)]))
+    form.INdiem1_2.display(xuly.score_names[(xuly.player_B_score)])
 
 
 def reset():
-    form.INdiem1.setText("0")
-    form.INdiem1_2.setText("0")
-    form.linEketqua.setText(xuly.reset_game())
+    xuly.reset_game()
+    form.INdiem1.display(xuly.score_names[(xuly.player_B_score)])
+    form.INdiem1_2.display(xuly.score_names[(xuly.player_B_score)])
+    form.lneWord.setText(xuly.reset_game())
 
 form.bt1.clicked.connect(player_A)
 form.bt2.clicked.connect(player_B)
 form.btreset.clicked.connect(reset)
-def check():
-    form
+
 
 window.show()
 app.exec()
