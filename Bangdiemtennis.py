@@ -1,11 +1,11 @@
 import sys
 from PyQt6 import QtWidgets
 from PyQt6.QtWidgets import QApplication, QWidget
-from giaodienbangdiemtennis import Ui_bangdiemtennis
+from giaodientennis import Ui_bangdiemtennis
 import xuly
 
 app = QApplication(sys.argv)
-window = QWidget(windowTitle = 'Quy doi he')
+window = QWidget(windowTitle = 'Tennis')
 form =Ui_bangdiemtennis()
 form.setupUi(window)
 
@@ -28,7 +28,8 @@ def reset():
 form.bt1.clicked.connect(player_A)
 form.bt2.clicked.connect(player_B)
 form.btreset.clicked.connect(reset)
-
+def check():
+    form
 
 window.show()
 app.exec()
