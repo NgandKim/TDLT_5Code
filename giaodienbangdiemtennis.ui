@@ -182,6 +182,11 @@
     </disabled>
    </palette>
   </property>
+  <property name="font">
+   <font>
+    <pointsize>8</pointsize>
+   </font>
+  </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
@@ -1163,89 +1168,6 @@
     </rect>
    </property>
   </widget>
-  <widget class="QPushButton" name="bthoa">
-   <property name="geometry">
-    <rect>
-     <x>250</x>
-     <y>200</y>
-     <width>151</width>
-     <height>51</height>
-    </rect>
-   </property>
-   <property name="palette">
-    <palette>
-     <active>
-      <colorrole role="BrightText">
-       <brush brushstyle="SolidPattern">
-        <color alpha="51">
-         <red>16</red>
-         <green>96</green>
-         <blue>255</blue>
-        </color>
-       </brush>
-      </colorrole>
-      <colorrole role="ButtonText">
-       <brush brushstyle="SolidPattern">
-        <color alpha="180">
-         <red>15</red>
-         <green>128</green>
-         <blue>255</blue>
-        </color>
-       </brush>
-      </colorrole>
-     </active>
-     <inactive>
-      <colorrole role="BrightText">
-       <brush brushstyle="SolidPattern">
-        <color alpha="51">
-         <red>16</red>
-         <green>96</green>
-         <blue>255</blue>
-        </color>
-       </brush>
-      </colorrole>
-      <colorrole role="ButtonText">
-       <brush brushstyle="SolidPattern">
-        <color alpha="180">
-         <red>15</red>
-         <green>128</green>
-         <blue>255</blue>
-        </color>
-       </brush>
-      </colorrole>
-     </inactive>
-     <disabled>
-      <colorrole role="BrightText">
-       <brush brushstyle="SolidPattern">
-        <color alpha="51">
-         <red>16</red>
-         <green>96</green>
-         <blue>255</blue>
-        </color>
-       </brush>
-      </colorrole>
-      <colorrole role="ButtonText">
-       <brush brushstyle="SolidPattern">
-        <color alpha="255">
-         <red>148</red>
-         <green>148</green>
-         <blue>148</blue>
-        </color>
-       </brush>
-      </colorrole>
-     </disabled>
-    </palette>
-   </property>
-   <property name="font">
-    <font>
-     <family>Times New Roman</family>
-     <pointsize>23</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>Deuce</string>
-   </property>
-  </widget>
   <widget class="QPushButton" name="btreset">
    <property name="geometry">
     <rect>
@@ -1327,6 +1249,27 @@
    </property>
    <property name="text">
     <string>Reset</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lneWord">
+   <property name="geometry">
+    <rect>
+     <x>240</x>
+     <y>240</y>
+     <width>181</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
    </property>
   </widget>
  </widget>
