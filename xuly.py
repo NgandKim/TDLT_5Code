@@ -14,36 +14,28 @@ def reset_game():
 
 
 def get_display_score():
+    #Trường hợp Deuce,Advantage,Win
     if player_A_score >= 3 and player_B_score >= 3:
-        if player_A_score == 3 and player_B_score == 3:
+        if player_A_score == player_B_score:
             return "Deuce"
         elif player_A_score == player_B_score + 1:
             return "Advantage A"
         elif player_B_score == player_A_score + 1:
             return "Advantage B"
+        elif player_A_score >= player_B_score + 2:
+            return "Player 1 wins!"
+        elif player_B_score >= player_A_score + 2:
+            return "Player 2 wins!"
+    #Trường hợp bình thường
+    else:
+        return f"{score_names[player_A_score]} - {score_names[player_B_score]}"
 
-    # Nếu chưa tới giai đoạn Deuce
-    score_A_display = score_names[player_A_score] if player_A_score < 4 else "40"
-    score_B_display = score_names[player_B_score] if player_B_score < 4 else "40"
-    return f"A: {score_A_display} - B: {score_B_display}"
-
-
-def check_winner():
-    if player_A_score >= 4 and player_A_score >= player_B_score + 2:
-        return "Player 1 wins!"
-    elif player_B_score >= 4 and player_B_score >= player_A_score + 2:
-        return "Player 2 wins!"
-
-
+#cập nhật điểm
 def update_score(player):
     global player_A_score, player_B_score
     if player == "A":
         player_A_score += 1
     elif player == "B":
         player_B_score += 1
+    return (get_display_score())
 
-    # Kiểm tra thắng thua
-    winner = check_winner()
-    if winner:
-        result = winner
-        return result
