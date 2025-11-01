@@ -1,7 +1,7 @@
 import sys
 from PyQt6 import QtWidgets
 from PyQt6.QtWidgets import QApplication, QWidget
-from giaodientennis import Ui_bangdiemtennis
+from giaodien import Ui_bangdiemtennis
 import xuly
 
 app = QApplication(sys.argv)
