@@ -15,8 +15,8 @@ def reset_game():
 
 def get_display_score():
     if player_A_score >= 3 and player_B_score >= 3:
-        if player_A_score == player_B_score:
-            return "Deuce"
+        if player_A_score == 3 and player_B_score == 3:
+            return "A: 40 - B: 40\nDeuce"
         elif player_A_score == player_B_score + 1:
             return "Advantage A"
         elif player_B_score == player_A_score + 1:
