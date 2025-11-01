@@ -33,7 +33,6 @@ def check_winner():
         return "Người chơi A thắng game!"
     elif player_B_score >= 4 and player_B_score >= player_A_score + 2:
         return "Người chơi B thắng game!"
-    return None
 
 
 def update_score(player):
