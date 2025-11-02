@@ -11,7 +11,7 @@ def reset_game():
     p1=0
     p2=0
     kqua="Start"
-    return p1, p2, kqua # Trả về p1, p2 bằng 0 và thông báo stare
+    return p1, p2, kqua # Trả về p1, p2 bằng 0 và thông báo start
 
 #Hàm hiện tỉ số, kết quả game
 def get_display_score(p1, p2):
