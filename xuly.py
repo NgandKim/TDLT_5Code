@@ -15,9 +15,9 @@ def reset_game():
 
 def get_display_score():
     #Trường hợp Deuce,Advantage,Win
-    if player_A_score == 4 and player_B_score == 1 or player_A_score == 4 and player_B_score == 0:
+    if player_A_score == 4 and player_A_score-player_B_score >=2 :
         return "Player 1 wins"
-    elif player_B_score == 4 and player_A_score == 1 or player_B_score == 4 and player_A_score == 0:
+    elif player_B_score == 4 and player_B_score-player_A_score >=2:
         return "Player 2 wins"
     elif player_A_score >= 3 and player_B_score >= 3:
         if player_A_score == player_B_score:
