@@ -1,14 +1,14 @@
 import sys
 from PyQt6.QtWidgets import QApplication, QWidget
-from giaodien import *
-from xuly import *
+from giaodien import * #import file giaodien.py
+from xuly import * #import file xulu.py
 
 app = QApplication(sys.argv)
 window = QWidget()
 form = Ui_bangdiemtennis()
 form.setupUi(window)
 
-# Tạo p1, p2 như thuộc tính của form vì thế có thể gọi ra và cập nhật
+# Tạo p1, p2 như thuộc tính của form, có thể gọi ra và cập nhật
 form.p1 = 0
 form.p2 = 0
 
@@ -49,3 +49,4 @@ def reset():
 lienketnut() #Gọi hàm lienketnut chạy
 window.show()
 app.exec()
+
