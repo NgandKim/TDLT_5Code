@@ -1,7 +1,7 @@
 import sys
 from PyQt6.QtWidgets import QApplication, QWidget
 from giaodien import * #import file giaodien.py
-from xuly import * #import file xulu.py
+from xuly import * #import file xuly.py
 
 app = QApplication(sys.argv)
 window = QWidget()
@@ -49,4 +49,5 @@ def reset():
 lienketnut() #Gọi hàm lienketnut chạy
 window.show()
 app.exec()
+
 
